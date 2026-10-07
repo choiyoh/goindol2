@@ -1,0 +1,30 @@
+{
+ "image": "leopard.png",
+ "cell": [
+  58,
+  30
+ ],
+ "anchor": [
+  29,
+  30
+ ],
+ "facing": "left",
+ "frames": {
+  "crouch": 0,
+  "leap": 1,
+  "run": [
+   2,
+   3
+  ],
+  "hurt": 4
+ },
+ "runFrameMs": 90,
+ "suggest": "대기·시야 감지 전엔 crouch(납작 엎드림) → 기습 점프 동안 leap → 착지 후 run 2프레임 반복",
+ "hitboxRelAnchor": {
+  "x": -26,
+  "y": -20,
+  "w": 48,
+  "h": 19
+ },
+ "drawHeightPx": 26
+}

@@ -1,0 +1,27 @@
+{
+ "image": "dino.png",
+ "cell": [
+  34,
+  30
+ ],
+ "anchor": [
+  17,
+  30
+ ],
+ "facing": "left",
+ "frames": {
+  "stand": 0,
+  "crouch": 1,
+  "jump": 2,
+  "bite": 3,
+  "hurt": 4
+ },
+ "suggest": "땅: stand↔crouch(도약 준비 150ms) → 공중: jump → 착지 직후 bite 200ms → stand",
+ "hitboxRelAnchor": {
+  "x": -13,
+  "y": -24,
+  "w": 24,
+  "h": 24
+ },
+ "drawHeightPx": 25
+}

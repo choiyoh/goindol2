@@ -1,0 +1,37 @@
+{
+ "image": "turtle.png",
+ "cell": [
+  36,
+  16
+ ],
+ "anchor": [
+  18,
+  16
+ ],
+ "facing": "left",
+ "frames": {
+  "walk": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "hurt": 4,
+  "flipped": [
+   5,
+   6
+  ]
+ },
+ "walkFrameMs": 150,
+ "flippedFrameMs": 120,
+ "footSlidePerFrame": 1,
+ "suggestedWalkSpeedPx": 7,
+ "hitboxRelAnchor": {
+  "x": -16,
+  "y": -13,
+  "w": 32,
+  "h": 13
+ },
+ "drawHeightPx": 14,
+ "note": "몸 높이 14px라 2칸 굴(32px)과 웅크려 공격 판정(y -12~-4)에 들어감. 한 장으로 거북이 3마리 전부 사용."
+}
