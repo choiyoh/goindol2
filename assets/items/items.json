@@ -1,0 +1,26 @@
+{
+ "image": "items.png",
+ "cell": [
+  16,
+  16
+ ],
+ "frames": {
+  "apple": 0,
+  "cherry": 1,
+  "banana": 2,
+  "grapes": 3,
+  "burger": 4,
+  "fries": 5,
+  "cake": 6,
+  "donut": 7,
+  "bone": 8,
+  "heart": 9,
+  "1up": 10,
+  "diamond": 11,
+  "letter_B": 12,
+  "letter_O": 13,
+  "letter_U": 14,
+  "lighter": 15
+ },
+ "note": "letter는 kind 'letter' + letter 값으로 letter_B/O/U 프레임 선택. 떠 있는 아이템은 엔진에서 1~2px 위아래 둥실(600ms 주기) 추천"
+}

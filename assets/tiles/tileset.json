@@ -1,0 +1,18 @@
+{
+ "image": "tileset.png",
+ "tile": 16,
+ "columns": 16,
+ "maskBits": {
+  "top": 1,
+  "right": 2,
+  "bottom": 4,
+  "left": 8
+ },
+ "maskRule": "해당 면 이웃이 '막힌 칸'(1·2·5)이 아니면 그 비트를 켬. 맵 바깥은 막힌 칸으로 취급",
+ "variantRule": "var = (tx*7 + ty*13) & 1",
+ "rock2_and_hidden5": "row = var, col = mask (0..15)",
+ "grass1": "row 2, col = var*8 + (mask>>1)  (위쪽은 항상 풀)",
+ "oneway3": "row 3, col 0 왼끝 / 1 가운데 / 2 오른끝 / 3 한 칸짜리 (좌우 이웃이 3인지로 결정)",
+ "spikes4": "row 3, col 4 + var",
+ "hidden5": "2와 똑같이 그림(숨은 방이 티 나지 않게). 안에 들어가면 엔진에서 반투명 처리"
+}
