@@ -1,1 +1,130 @@
-<!DOCTYPE html><html><body>loading</body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>고인돌2 Homage — Stage 1 MVP</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%;
+      background: #101018;
+      color: #e0e0e0;
+      font-family: system-ui, sans-serif;
+      overflow: hidden;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    #wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      gap: 8px;
+    }
+    #status {
+      position: fixed;
+      top: 4px; left: 0; right: 0;
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.75;
+      min-height: 1.2em;
+      pointer-events: none;
+    }
+    /* Size + position set by fitCanvas() (integer device-pixel scale). */
+    canvas#game {
+      position: fixed;
+      left: 0; top: 0;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      background: #000;
+      touch-action: none;
+    }
+    #touch {
+      display: none;
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+    #touch .zone {
+      position: absolute;
+      pointer-events: auto;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      color: rgba(255,255,255,0.45);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #touch .left { left: 8px; bottom: 8px; width: 28%; height: 22%; }
+    #touch .right { left: calc(8px + 28% + 8px); bottom: 8px; width: 28%; height: 22%; }
+    #touch .crouch { left: 8px; bottom: calc(8px + 22% + 8px); width: calc(56% + 8px); height: 12%; }
+    #touch .jump { right: 8px; bottom: 8px; width: 28%; height: 28%; }
+    #touch .attack { right: 8px; bottom: calc(8px + 28% + 8px); width: 28%; height: 14%; }
+    @media (pointer: coarse) {
+      #touch { display: block; }
+    }
+    /*
+     * Landscape touch: pads live in the side gutters beside the canvas
+     * (--gutter = canvas left edge, set by fitCanvas; ≥96px reserved), so they
+     * never cover game pixels or the bottom HUD.
+     * Left gutter: ◀ ▶ + crouch (movement thumb). Right gutter: JUMP + CLUB.
+     */
+    @media (pointer: coarse) and (orientation: landscape) {
+      #status {
+        left: 4px; right: auto;
+        width: calc(var(--gutter, 96px) - 8px);
+        text-align: left;
+        font-size: 10px;
+      }
+      #touch .left,
+      #touch .right,
+      #touch .crouch,
+      #touch .jump,
+      #touch .attack { width: auto; }
+      #touch .left {
+        left: 8px; bottom: 8px; height: 34%;
+        width: calc((var(--gutter, 96px) - 24px) / 2);
+      }
+      #touch .right {
+        left: calc(16px + (var(--gutter, 96px) - 24px) / 2); bottom: 8px; height: 34%;
+        width: calc((var(--gutter, 96px) - 24px) / 2);
+      }
+      #touch .crouch {
+        left: 8px; bottom: calc(16px + 34%); height: 20%;
+        width: calc(var(--gutter, 96px) - 16px);
+      }
+      #touch .jump {
+        right: 8px; bottom: 8px; height: 40%;
+        width: calc(var(--gutter, 96px) - 16px);
+      }
+      #touch .attack {
+        right: 8px; bottom: calc(16px + 40%); height: 24%;
+        width: calc(var(--gutter, 96px) - 16px);
+      }
+    }
+    /* Title / difficulty / results: hide the pad so taps reach the canvas. */
+    body.menu-mode #touch { display: none !important; }
+  </style>
+</head>
+<body class="menu-mode">
+  <div id="wrap">
+    <div id="status">Loading…</div>
+    <canvas id="game" width="320" height="200"></canvas>
+  </div>
+  <div id="touch" aria-hidden="true">
+    <div class="zone left" data-btn="left">◀</div>
+    <div class="zone right" data-btn="right">▶</div>
+    <div class="zone crouch" data-btn="down">蹲 crouch</div>
+    <div class="zone jump" data-btn="jump">JUMP</div>
+    <div class="zone attack" data-btn="attack">CLUB</div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
