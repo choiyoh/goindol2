@@ -1,0 +1,1 @@
+file:///tmp/goindol2-publish/js/fx.js
