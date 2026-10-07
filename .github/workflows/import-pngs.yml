@@ -1,0 +1,31 @@
+name: import-pngs
+on:
+  workflow_dispatch:
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode PNGs from pngs_b64.json
+        run: |
+          python3 <<'PY'
+          import json, base64, os
+          m=json.load(open("pngs_b64.json"))
+          for path,b64 in m.items():
+            os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+            data=base64.b64decode(b64)
+            open(path,"wb").write(data)
+            print(path, len(data))
+          PY
+      - name: Commit and push PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A "*.png" pngs_b64.json
+          git rm -f pngs_b64.json || true
+          git add -A
+          git status
+          git commit -m "Add binary PNG assets from publish tree" || echo "nothing to commit"
+          git push
