@@ -1,0 +1,7 @@
+{
+ "title_bg": "title_bg.png (320x200, 바닥·주인공까지 합성된 배경)",
+ "logo": "logo.png (가운데 정렬, y≈22 권장)",
+ "cursor": "cursor_bone.png (선택 줄 왼쪽 14px, 0.5초 좌우 1px 흔들기)",
+ "menu": "font.png로 BEGINNER/EXPERT를 x=132, y=108부터 14px 간격",
+ "result": "결과 화면은 title_bg 위에 STAGE CLEAR!/GAME OVER와 SCORE 숫자, 수집률(예: ITEMS 34/78)을 font.png로. / % 글자 있음"
+}

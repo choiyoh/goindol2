@@ -1,0 +1,25 @@
+{
+ "size": [
+  320,
+  176
+ ],
+ "tileX": true,
+ "layers": [
+  {
+   "image": "bg_sky.png",
+   "parallaxX": 0.0,
+   "parallaxY": 0.0
+  },
+  {
+   "image": "bg_far.png",
+   "parallaxX": 0.15,
+   "parallaxY": 0.1
+  },
+  {
+   "image": "bg_mid.png",
+   "parallaxX": 0.35,
+   "parallaxY": 0.1
+  }
+ ],
+ "note": "sky→far→mid 순으로 그리고 그 위에 타일. x = -floor(camX*parallaxX) mod 320로 가로 반복. far/mid는 PLAY_H 바닥까지 채워져 있어 세로 parallax 10%로 살짝 움직여도 빈틈 없음(y = -floor(camY*0.1)를 0~-16로 clamp 권장)."
+}

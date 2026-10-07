@@ -1,0 +1,1 @@
+{"image": "font.png", "cell": [7, 9], "advance": 7, "chars": "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!-.:? /%x", "note": "글자 i번째는 x=i*7. 소문자 x는 곱하기 기호. 대문자만 있음(toUpperCase)."}
