@@ -1,0 +1,12 @@
+{
+  "image": "hero_crouchattack.png",
+  "cell": [64, 48],
+  "anchor": [24, 48],
+  "frames": 4,
+  "loop": false,
+  "frameMs": [120, 60, 160, 120],
+  "hitFrame": 2,
+  "clubHitboxRelAnchor": {"x": 19, "y": -12, "w": 19, "h": 8},
+  "maxDrawHeightPx": 30,
+  "note": "frame 0 wind-up (club over back), 1 swing with arc, 2 hit fully extended low, 3 recover; nothing goes above 32px tunnel ceiling"
+}

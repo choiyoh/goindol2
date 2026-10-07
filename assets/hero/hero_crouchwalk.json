@@ -1,0 +1,11 @@
+{
+  "image": "hero_crouchwalk.png",
+  "cell": [48, 48],
+  "anchor": [24, 48],
+  "frames": 4,
+  "loop": true,
+  "footSlidePerFrame": 8.5,
+  "bodyBobPx": [1, 0, 1, 0],
+  "drawHeightPx": 28,
+  "note": "art 28px tall; crouch hitbox 20x24 handled by engine (same idea as stand 41px art / 34px hitbox)"
+}

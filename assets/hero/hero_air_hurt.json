@@ -1,0 +1,7 @@
+{
+  "image": "hero_air_hurt.png",
+  "cell": [64, 48],
+  "anchor": [32, 48],
+  "frames": {"jump_up": 0, "jump_top": 1, "fall": 2, "hurt": 3},
+  "note": "jump_up while rising fast, jump_top near apex (|vy| small), fall while descending, hurt = knocked back (engine can blink it). Anchor = bottom-center of feet, same as other sheets."
+}

@@ -1,0 +1,12 @@
+{
+  "image": "hero_walk.png",
+  "cell": [48, 48],
+  "anchor": [24, 48],
+  "frames": 8,
+  "loop": true,
+  "footSlidePerFrame": 4.7,
+  "suggestedFpsAt117pxPerSec": 25,
+  "bodyBobPx": [0, 1, 0, -1, 0, 1, 0, -1],
+  "drawHeightPx": 41,
+  "note": "anchor = bottom-center of feet; hitbox handled by engine (stand 20x34)"
+}

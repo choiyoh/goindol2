@@ -1,0 +1,27 @@
+{
+  "image": "hero_attack.png",
+  "cell": [
+    80,
+    48
+  ],
+  "anchor": [
+    32,
+    48
+  ],
+  "frames": 4,
+  "loop": false,
+  "frameMs": [
+    30,
+    60,
+    160,
+    100
+  ],
+  "hitFrame": 2,
+  "clubHitboxRelAnchor": {
+    "x": 16,
+    "y": -26,
+    "w": 20,
+    "h": 12
+  },
+  "note": "0 wind-up (snappy), 1 overhead swing, 2 hit forward at chest, 3 follow-through. GM feel tune: frameMs shortened so hit starts ~90ms, total ~350ms; art unchanged. Crouch attack keeps longer wind-up."
+}

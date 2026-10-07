@@ -1,0 +1,19 @@
+{
+  "image": "hero_idle.png",
+  "cell": [
+    48,
+    48
+  ],
+  "anchor": [
+    24,
+    48
+  ],
+  "frames": 2,
+  "loop": true,
+  "frameMs": [
+    500,
+    500
+  ],
+  "drawHeightPx": 41,
+  "note": "copied from hand/hero_idle41 (2-frame breath, 41px); replaces hero_idle_48.png (38px) so idle and walk share the same body and legs"
+}
